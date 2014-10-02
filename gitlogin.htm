@@ -1,0 +1,36 @@
+<div class="easyui-panel" style="width:100%">
+<div style="padding:10px 60px 20px 60px">
+<div style="text-align:center;padding:5px">
+<p><img src="http://www.dacran.co.uk/wp-content/uploads/2014/09/github-logo-e1411845571137.png"  style="width:60px; height:60px"/></p>
+<p>Save your work to be shared with others and for future use in compileonline</p>
+</div>
+<form id="gitloginform" method="post" data-options="url:'save_at_github'" enctype="multipart/form-data">
+<table cellpadding="5">
+<tr>
+<td>GitHub Login ID:</td>
+<td><input class="easyui-textbox" type="text" id="gitloginid" data-options="required:true" style="width:300px"></input></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input class="easyui-textbox" type="password" id="gitpassword" data-options="required:true" style="width:300px"></input></td>
+</tr>
+<tr>
+<td>Repository Title:</td>
+<td><input class="easyui-textbox" type="text" id="projecttitle" data-options="required:true" style="width:300px"></input></td>
+</tr>
+<tr>
+<td>Project Detail:</td>
+<td><input class="easyui-textbox" type="text" id="detail" data-options="multiline:true, required:true" style="height:60px;width:300px"></input></td>
+</tr>
+</table>
+</form>
+<div style="text-align:center;padding:5px">
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="save_at_github()" style="width:60px"> Save </a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeGitHubLogin()" style="width:60px"> Cancel </a>
+</div>
+<br>
+<div style="text-align:center;padding:5px">
+<p>If you are not subscribed to GitHub then <a href="https://github.com/join" rel="nofollow" target="_blank">Join GitHub</a> right now!</p>
+</div>
+<div id="gitloading" style="visibility:hidden"></div>
+</div>
