@@ -1,0 +1,223 @@
+Oracle 11g DBA
+
+Introduction
+	Oracle Database Overview
+	Oracle Database Architecture
+	Oracle Memory Structures
+	Database Background processes
+	System Global Area
+	Different types of Datafiles
+
+Introduction
+	Oracle Database Overview
+	Oracle Database Architecture
+	Oracle Memory Structures
+	Database Background processes
+	System Global Area
+	Different types of Datafiles
+	
+	
+DBA Overview
+	DBA Overview
+	DBA Common Tasks
+	DBA Administering Tools
+
+Oracle Database Installation
+	Installation Prerequisites
+	System Requirements
+	Environment Variables
+	Database Configuration Options
+	Oracle Universal Installer(OUI)
+	Database Startup Modes
+	Database Shutdown Modes
+	
+Oracle Database Creation
+	Planning the Database
+	Database Creation Types
+	DBCA to Create a Database
+	Manual Method of Creation
+	Database Password Management
+	
+Managing the Oracle Instance
+	Oracle Instance Management
+	Database initialization Parameters
+	sSages of database startup
+	Start Oracle Instance
+	Stop Oracle Instance
+	View the Alert log
+	
+Oracle Tablespace Management
+	Introduction
+	Tablespace Types
+	Create Tablespace
+	UNDO Tablespace
+	Temporary Tablespace
+	Bigfile Tablespaces
+	Encrypted Tablespaces
+	Tablespace Sizing
+	Dropping Tablespaces
+	
+STORAGE PARAMETERS
+	What are segments?
+	What are extents?
+	What is Blocks?
+	Oracle Blocks
+	Estimation of Extents
+	Dictionary Managed Table space
+	Locally Managed Table space
+	Storage Parameters(Initial, Next, Min Extents, Xtents, Pctincrease)
+
+Tnsnames.ora
+	Introduction to Database Links
+	Types of Database Links
+	Introduction to Materialized views
+	Advantages of Materialized view
+	Refresh Modes
+	Difference between spfile and pfile
+	Advantages of spfile
+	What is OMF?
+	Advantages of OMF
+	Files conventions of OMF
+
+USER MANAGEMENT
+	Who are Database Users?
+	Why to create a User?
+	Creation of Users
+	Assigning Privileges
+	Creating and granting Roles
+	Allocating table space Quotas to Users
+	Assigning default table space for the Users
+	Setting Profiles for the Users
+	Levels of Authentication
+	Schema Management(11g)
+	Security(11g)
+
+Managing Schema Objects
+	Creating, Modifying, and Dropping Tables
+	Understanding Data Integrity and Defining Constraints
+	Viewing the Contents of a Table
+	Creating and Dropping Indexes
+	Managing Views
+	Managing Program Code Stored in the Database
+	Managing Access to Schema Objects
+	Loading Data
+	Define schema objects and data types
+	Create and modify tables
+	Define constraints
+	View the columns and contents of a table
+	Create indexes, views and sequences
+	Explain the use of temporary tables
+	Use the Data Dictionary
+	Manage data through SQL
+	Monitor and resolve locking conflicts
+	
+Managing REDO-LOG
+	Introduction to Redo log
+	Status of Redo logs
+	Multiplexing the Redo log files
+	Re-creation of Control file
+	Renaming the Database
+	Multiplexing the Control file
+	
+Managing Undo Data
+	What is Undo?
+	Why Undo required?
+	Monitor and administer undo
+	Guarantee undo retention
+	Configure undo retention
+	Pending offline status
+	Difference between undo and redo data
+	
+Backup and Recovery Concepts
+
+	Identify the types of failure that may occur in an Oracle Database
+	Describe ways to tune instance recovery
+	Identify the importance of checkpoints, redo log files, and archived log files
+	Configure ARCHIVELOG mode
+
+
+Performing Database Backups
+
+	Create consistent database backups
+	Back your database up without shutting it down
+	Create incremental backups
+	Automate database backups
+	Monitor the flash recovery area
+	
+	
+LOGICAL BACKUP
+	What is a logical backup
+	Why it is required
+	Export/import Utility
+	Data Pump
+	Difference between Data Pump and Traditional Export/import
+	Impdp/expdp
+	Transportable Table spaces
+	
+PHYSICAL BACKUP
+	Introduction to Physical backup
+	Types of Physical backup
+	Cold & Hot backup
+	Recovery scenarios
+	RMAN backup
+	RMAN Point in time recovery
+	RMAN 11g new features
+	
+Performing Database Recovery
+	Recover from loss of a control file
+	Recover from loss of a redo log file
+	Perform complete recovery following the loss of a data file
+
+Performing Flashback
+	Describe Flashback database
+	Restore the table content to a specific point in the past with Flashback Table
+	Recover from a dropped table
+	View the contents of the database as of any single point in time with Flashback Query
+	See versions of a row over time with Flashback Versions Query
+	View the transaction history of a row with Flashback Transaction Query
+
+Flashback
+	Flashback Database Architecture
+	Configuring and Monitoring Flashback Database
+	Backing Up the Flash Recovery Area
+	
+Performing Flashback
+	Describe Flashback database
+	Restore the table content to a specific point in the past with Flashback Table
+	Recover from a dropped table
+	View the contents of the database as of any single point in time with Flashback Query
+	See versions of a row over time with Flashback Versions Query
+	View the transaction history of a row with Flashback Transaction Query
+
+PEFORMANCE TUNING
+	What is Performance Tuning?
+	Why Tuning required?
+	Types of Tuning
+	Database Tuning
+	Tuning
+	SQL Tuning
+	Memory Tuning
+	Network Tuning
+	Partitioning and Indexes
+	Partitioning Enhancements
+	AWR/ASH/ASMM/ADDM
+	RAT(Real Application Testing)(11g)
+	SQL Performance Analyses (11g)
+	Row chaining and Row migration
+	Resemble Table spaces
+
+
+Oracle Database Security
+	Describe DBA responsibilities for security
+	Apply the principal of least privilege
+	Enable standard database auditing
+	Specify audit options
+	Review audit information
+	Maintain the audit trail
+	
+
+	
+
+
+	
+		
