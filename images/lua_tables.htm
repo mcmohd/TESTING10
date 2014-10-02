@@ -1,0 +1,403 @@
+<!doctype html> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Lua - Tables</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="description" content="Lua Overview  - Learn what is Lua Programming Language and associated concepts Environment Setup, Basic Syntax, Variables, Data Types,  Operators, Loops, Decision Making, Functions, Strings, Arrays, Iterators, Tables, Modules, Metatables, Coroutines, File I/O, Error Handling, Debugging, Garbage Collection,  Object Oriented, Web Programming, Database Access, Game Programing and its Standard Libraries." />
+<meta name="keywords" content="Lua, Programming, Language, Environment Setup, Basic Syntax, Variables, Data Types,  Operators, Loops, Decision Making, Functions, Strings, Arrays, Iterators, Tables, Modules, Metatables, Coroutines, File I/O, Error Handling, Debugging, Garbage Collection,  Object Oriented, Web Programming, Database Access, Game Programing and its Standard Libraries."/>
+<base href="http://www.tutorialspoint.com" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="/scripts/mobile.js"></script>
+<link rel="stylesheet" type="text/css" href="/scripts/style.css" />
+<link rel="stylesheet" type="text/css" href="/scripts/prettify.css" />
+<script type="text/javascript" src="/scripts/prettify.js"></script>
+<link rel="stylesheet" type="text/css" href="/scripts/colorbox.css" />
+<script type="text/javascript" src="/scripts/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="/scripts/tryit.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  var tryit = new $.TryIt('/lua/try_lua.php');
+  tryit.compile();
+});
+</script>
+<style media="screen" type="text/css">
+#topmenu a:hover {text-decoration:none;color:#CD074F !important;background-color:transparent;font-weight:bold;}
+#header{ 
+   background:#CD074F !important;
+}
+.heading{
+  color:#eee;
+}
+#topmenu
+{
+   background-color:#3f403d !important;
+}
+#leftcol ul.menu li.heading 
+{
+   background:#3f403d !important;
+   border:1px solid #3f403d !important;
+}
+#middlecol  {min-height:1000px; padding:0px;}
+</style>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+   _uacct = "UA-232293-6";
+   urchinTracker();
+</script>
+</head>
+<body onload="prettyPrint()">
+<div id="header">
+<div class="wrapper">
+<h1 class="logo"><a href="/index.htm">Tutorials Point Simply Easy Learning</a></h1>
+<div id="search">
+<form method="get" id="searchform" name="searchform" action="http://www.google.com/search" target="_blank">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com"/>
+<input type="text" name="as_q" id="s" value="Search this site..." onfocus="if (this.value == 'Search this site...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this site...';}"/>
+<input value="FORID:11" name="cof" type="hidden"/>
+<input type="hidden" name="ie" value="ISO-8859-1" />
+<input class="submit btn" type="image" src="/images/icon-search.png" alt="Go"/>
+</form>
+</div>
+</div>
+</div>
+<div id="topmenu">
+<div class="wrapper">
+<div id="mobileleft">
+<a href="index.htm" id="home"><img src="/images/home-icon.png" /></a>
+</div>
+<div id="left">
+<a href="/index.htm" target="_top">HOME </a>
+<a href="/java/index.htm" target="_top">JAVA </a>
+<a href="/php/index.htm" target="_top">PHP </a>
+<a href="/python/index.htm" target="_top">Python </a>
+<a href="/ruby/index.htm" target="_top">Ruby </a>
+<a href="/perl/index.htm" target="_top">Perl </a>
+<a href="/html/index.htm" target="_top">HTML </a>
+<a href="/css/index.htm" target="_top">CSS </a>
+<a href="/javascript/index.htm" target="_top">Javascript </a>
+<a href="/mysql/index.htm" target="_top">MySQL </a>
+<a href="/cplusplus/index.htm" target="_top">C++ </a>
+<a href="/unix/index.htm" target="_top">UNIX </a>
+<a href="/more.htm" target="_top">MORE...</a>
+</div>
+<div id="mobileright">
+<a href="#" id="pull"><img src="/images/nav-icon.png" /></a>
+</div>
+<div id="right">
+<a href="/references.htm" target="_top">REFERENCES</a> |
+<a href="/forums/index.php" target="_top">FORUM</a> |
+<a href="/about/index.htm" target="_top">ABOUT</a> |
+<a href="/about/contact_us.htm" target="_top">CONTACT</a>
+</div>
+</div>
+</div>
+<div class="wrapper">
+<div id="leftcol">
+<div class="mini-logo">
+<img src="/lua/images/lua-mini-logo.png" alt="Lua Tutorial" />
+</div>
+<ul class="menu">
+<li class="heading">Lua Basics</li>
+<li><a target="_top" href="/lua/index.htm">Lua - Home</a></li>
+<li><a target="_top" href="/lua/lua_overview.htm">Lua - Overview</a></li>
+<li><a target="_top" href="/lua/lua_environment.htm">Lua - Environment</a></li>
+<li><a target="_top" href="/lua/lua_basic_syntax.htm">Lua - Basic Syntax</a></li>
+<li><a target="_top" href="/lua/lua_variables.htm">Lua - Variables</a></li>
+<li><a target="_top" href="/lua/lua_data_types.htm">Lua - Data Types</a></li>
+<li><a target="_top" href="/lua/lua_operators.htm">Lua - Operators</a></li>
+<li><a target="_top" href="/lua/lua_loops.htm">Lua - Loops</a></li>
+<li><a target="_top" href="/lua/lua_decision_making.htm">Lua -  Decision Making</a></li>
+<li><a target="_top" href="/lua/lua_functions.htm">Lua - Functions</a></li>
+<li><a target="_top" href="/lua/lua_strings.htm">Lua - Strings</a></li>
+<li><a target="_top" href="/lua/lua_arrays.htm">Lua - Arrays</a></li>
+<li><a target="_top" href="/lua/lua_iterators.htm">Lua - Iterators</a></li>
+<li><a target="_top" href="/lua/lua_tables.htm"><b>Lua - Tables</b></a></li>
+<li><a target="_top" href="/lua/lua_modules.htm">Lua - Modules</a></li>
+<li><a target="_top" href="/lua/lua_metatables.htm">Lua - Metatables</a></li>
+<li><a target="_top" href="/lua/lua_coroutines.htm">Lua - Coroutines</a></li>
+<li><a target="_top" href="/lua/lua_file_io.htm">Lua - File I/O</a></li>
+<li><a target="_top" href="/lua/lua_error_handling.htm">Lua - Error Handling</a></li>
+</ul>
+<ul class="menu">
+<li class="heading">Lua Advanced</li>
+<li><a target="_top" href="/lua/lua_debugging.htm">Lua - Debugging</a></li>
+<li><a target="_top" href="/lua/lua_garbage_collection.htm">Lua - Garbage Collection</a></li>
+<li><a target="_top" href="/lua/lua_object_oriented.htm">Lua - Object Oriented</a></li>
+<li><a target="_top" href="/lua/lua_web_programming.htm">Lua - Web Programming</a></li>
+<li><a target="_top" href="/lua/lua_database_access.htm">Lua - Database Access</a></li>
+<li><a target="_top" href="/lua/lua_game_programing.htm">Lua - Game Programing</a></li>
+<li><a target="_top" href="/lua/lua_standard_libraries.htm">Lua - Standard Libraries</a></li>
+</ul>
+<ul class="menu">
+<li class="heading">Lua Useful Resources</li>
+<li><a target="_top" href="/lua/lua_quick_guide.htm">Lua  Quick Guide</a></li>
+<li><a target="_top" href="/lua/lua_useful_resources.htm">Lua Useful Resources</a></li>
+</ul>
+<ul class="menu">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</div><!-- leftcol -->
+<div id="middlecol">
+<!-- PRINTING STARTS HERE -->
+<div class="content">
+<h1>Lua - Tables</h1>
+<div class="topgooglead">
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+<hr />
+<div class="pre-btn">
+<a href="/lua/lua_iterators.htm">Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="/lua/lua_modules.htm">Next Page</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<h2>Introduction</h2>
+<p>Tables are the only data structure available in Lua that helps us create different types like arrays and dictionaries. Lua uses associative arrays and which can be indexed with not only numbers but also with strings except nil. Tables have no fixed size and can grow based on our need.</p>
+<p>Lua uses tables in all representations including representation of packages. When we access a method string.format, it means, we are accessing the format function available in string package.</p>
+<h2>Representation and Usage</h2>
+<p>Tables are called objects and they are neither values nor variables. Lua uses a constructor expression {} to create an empty table. It is to be know that there is no fixed relationship between a variable that holds reference of table and the table itself.</p>
+<pre class="prettyprint">
+--sample table initialization
+mytable = {}
+
+--simple table value assignment
+mytable[1]= "Lua"
+
+--removing reference
+mytable = nil
+-- lua garbage collection will take care of releasing memory
+</pre>
+<P>When we have a table a with set of elements and if we assign it to b, both a and b refer to the same memory. No separate memory is allocated separately for b. When a is set to nil, table will be still accessible to b. When there are no reference to a table, then garbage collection in Lua takes care of cleaning up process to make these unreferenced memory to be reused again.</p>
+<p>An example is shown below for explaining the above mentioned features of tables.</p>
+<pre class="prettyprint tryit">
+-- Simple empty table
+mytable = {}
+print("Type of mytable is ",type(mytable))
+
+mytable[1]= "Lua"
+mytable["wow"] = "Tutorial"
+print("mytable Element at index 1 is ", mytable[1])
+print("mytable Element at index wow is ", mytable["wow"])
+
+-- alternatetable and mytable refers to same table
+alternatetable = mytable
+
+print("alternatetable Element at index 1 is ", alternatetable[1])
+print("mytable Element at index wow is ", alternatetable["wow"])
+
+alternatetable["wow"] = "I changed it"
+
+print("mytable Element at index wow is ", mytable["wow"])
+
+-- only variable released and and not table
+alternatetable = nil
+print("alternatetable is ", alternatetable)
+
+-- mytable is still accessible
+print("mytable Element at index wow is ", mytable["wow"])
+
+mytable = nil
+print("mytable is ", mytable)
+
+</pre>
+<p>When we run the above program we will get the following output</p>
+<pre class="result">
+Type of mytable is 	table
+mytable Element at index 1 is 	Lua
+mytable Element at index wow is 	Tutorial
+alternatetable Element at index 1 is 	Lua
+mytable Element at index wow is 	Tutorial
+mytable Element at index wow is 	I changed it
+alternatetable is 	nil
+mytable Element at index wow is 	I changed it
+mytable is 	nil
+</pre>
+<h2>Table manipulation</h2>
+<p>There are in built functions for table manipulation and they are listed in the following table.</p>
+<table class="src">
+<tr><th style="width:5%">S.N.</th><th>Method &amp; Purpose</th></tr>
+<tr><td>1</td><td><b>table.concat (table [, sep [, i [, j]]]):</b><br/>Concatenates the strings in the tables based on the parameters given. See example for detail.</td></tr>
+<tr><td>2</td><td><b>table.insert (table, [pos,] value):</b><br/>Inserts a value into the table at specified position.</td></tr>
+<tr><td>3</td><td><b>table.maxn (table)</b><br/>Returns the largest numeric index.</td></tr>
+<tr><td>4</td><td><b>table.remove (table [, pos])</b><br/>Removes the value from the table.</td></tr>
+<tr><td>5</td><td><b>table.sort (table [, comp])</b><br/>Sorts the table based on optional comparator argument.</td></tr>
+</table>
+<p>The following example brings out the example for table functions.</p>
+<pre class="prettyprint tryit">
+fruits = {"banana","orange","apple"}
+-- returns concatenated string of table
+print("Concatenated string ",table.concat(fruits))
+
+--concatenate with a character
+print("Concatenated string ",table.concat(fruits,", "))
+
+--concatenate fruits based on index
+print("Concatenated string ",table.concat(fruits,", ", 2,3))
+
+-- insert a fruit at the end
+table.insert(fruits,"mango")
+print("Fruit at index 4 is ",fruits[4])
+
+--insert fruit at index 2
+table.insert(fruits,2,"grapes")
+print("Fruit at index 2 is ",fruits[2])
+
+print("The maximum elements in table is",table.maxn(fruits))
+
+print("The last element is",fruits[5])
+table.remove(fruits)
+print("The previous last element is",fruits[5])
+
+for k,v in ipairs(fruits) do
+print(k,v)
+end
+
+table.sort(fruits)
+print("sorted table")
+for k,v in ipairs(fruits) do
+print(k,v)
+end
+</pre>
+<p>When we run the above program we will get the following output</p>
+<pre class="result">
+Concatenated string 	bananaorangeapple
+Concatenated string 	banana, orange, apple
+Concatenated string 	orange, apple
+Fruit at index 4 is 	mango
+Fruit at index 2 is 	grapes
+The maximum elements in table is	5
+The last element is	mango
+The previous last element is	nil
+1	banana
+2	grapes
+3	orange
+4	apple
+sorted table
+1	apple
+2	banana
+3	grapes
+4	orange
+</pre>
+<hr />
+<div class="pre-btn">
+<a href="/lua/lua_iterators.htm">Previous Page</a>
+</div>
+<div class="print-btn">
+<a href="/cgi-bin/printpage.cgi" target="_blank">Print Version</a>
+</div>
+<div class="nxt-btn">
+<a href="/lua/lua_modules.htm">Next Page</a>
+</div>
+<div class="clearer"></div>
+<hr />
+</div>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 336;
+google_ad_height = 280;
+google_ad_format = "336x280_as";
+google_ad_type = "text";
+google_ad_channel ="9030538898";
+google_color_border="ffffff";
+google_color_link="900b09";
+google_color_url="000000";
+google_color_text="000000";
+//--></script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+</div><!-- middlecol -->
+<div id="rightcol">
+<!-- AddThis Button BEGIN -->
+<div class="addthis">
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<script type="text/javascript">
+<!--
+ document.write('<a class="addthis_button_google_plusone" g:plusone:count="false"></a>');
+//-->
+</script>
+<a class="addthis_button_linkedin"></a>
+<a class="addthis_button_email"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f661ec623a400f0"></script>
+</div>
+<!-- AddThis Button END -->
+<div class="localad">
+<a rel="nofollow" href="http://www.modernindianbabynames.com/" target="_blank" title="Modern Baby Names">Modern Baby Names</a>
+</div>
+<div class="localad">
+<a rel="nofollow" href="http://www.photofuntoos.com/" target="_blank" title="Online Photo Editing">Online Photo Editing</a>
+</div>
+<div class="rightgooglead">
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+</script>
+</div>
+</div><!-- rightcol -->
+<div style="clear:both;"></div>
+</div><!-- wrapper -->
+<div id="footer">
+<div class="wrapper">
+<div id="bottommenu">
+<a href="/asp.net/index.htm" target="_top">ASP.NET </a> |
+<a href="/jquery/index.htm" target="_top">jQuery </a> |
+<a href="/ajax/index.htm" target="_top">AJAX </a> |
+<a href="/ant/index.htm" target="_top">ANT</a> |
+<a href="/jsp/index.htm" target="_top">JSP </a> |
+<a href="/servlets/index.htm" target="_top">Servlets </a> |
+<a href="/log4j/index.htm" target="_top">log4j </a> |
+<a href="/ibatis/index.htm" target="_top">iBATIS </a> |
+<a href="/hibernate/index.htm" target="_top">Hibernate </a> |
+<a href="/jdbc/index.htm" target="_top">JDBC </a> |
+<a href="/struts_2/index.htm" target="_top">Struts </a> |
+<a href="/html5/index.htm" target="_top">HTML5 </a> |
+<a href="/sql/index.htm" target="_top">SQL </a> |
+<a href="/mysql/index.htm" target="_top">MySQL </a> |
+<a href="/cplusplus/index.htm" target="_top">C++ </a> |
+<a href="/unix/index.htm" target="_top">UNIX </a>
+</div>
+<div id="copyright">
+<p>Copyright &copy; 2013 by tutorialspoint. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</body>
+</html>
